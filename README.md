@@ -33,6 +33,31 @@ mongodb://mongo:XdnCdkmKwzJiKHiryTDzdgRGOxzNQYtA@crossover.proxy.rlwy.net:24258
 - Java 17 ou superior
 - Maven 3.6.0 ou superior
 
+### Instalação do Maven
+
+#### No Windows:
+1. Baixe o Maven do site oficial: https://maven.apache.org/download.cgi
+2. Extraia o arquivo ZIP para um diretório como `C:\apache-maven-3.9.5`
+3. Adicione a variável de ambiente `MAVEN_HOME` apontando para o diretório do Maven
+4. Adicione `%MAVEN_HOME%\bin` ao seu PATH
+5. Verifique a instalação com o comando:
+```cmd
+mvn -version
+```
+
+#### No Linux (Ubuntu/Debian):
+```bash
+sudo apt update
+sudo apt install maven
+```
+
+#### No Linux (CentOS/RHEL/Fedora):
+```bash
+sudo yum install maven
+# ou para Fedora:
+sudo dnf install maven
+```
+
 ### Executando a Aplicação
 
 1. Clone o repositório
@@ -49,6 +74,14 @@ Ou construa e execute o JAR:
 ./mvnw clean package
 java -jar target/educational-quality-project-0.0.1-SNAPSHOT.jar
 ```
+
+### Comandos úteis do Maven
+
+- Para compilar o projeto: `mvn compile`
+- Para executar os testes: `mvn test`
+- Para empacotar o projeto: `mvn package`
+- Para limpar os arquivos gerados: `mvn clean`
+- Para executar a aplicação: `mvn spring-boot:run`
 
 ### Acessando a Aplicação
 
