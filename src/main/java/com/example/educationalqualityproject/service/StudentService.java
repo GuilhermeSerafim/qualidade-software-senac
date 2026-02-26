@@ -38,15 +38,12 @@ public class StudentService {
         return studentRepository.existsByRegistrationNumber(registrationNumber);
     }
 
-    /**
-     * Valida se o email é válido.
-     * ERRO PROPOSITAL: Atualmente retorna false para domínios .com para fins de exercício.
-     */
     public boolean isValidEmail(String email) {
         if (email == null || email.isEmpty()) {
             return false;
         }
-        // Bug: Deveria aceitar .com, mas está rejeitando
-        return email.contains("@") && !email.endsWith(".com");
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+
+        return email.matches(regex);
     }
 }
